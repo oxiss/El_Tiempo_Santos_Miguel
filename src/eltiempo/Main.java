@@ -15,6 +15,9 @@ public class Main {
 		
 	ApiWeather miapp = new ApiWeather();
 	miapp.JsonReader();
+	
+	
+	
 		
 	//String json = "{\"longitud\":\"1\",\"latitud\":2}";
 	//Gson gson = new Gson();

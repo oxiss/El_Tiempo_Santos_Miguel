@@ -13,8 +13,10 @@ public class Main {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		
-	ApiWeather miapp = new ApiWeather();
-	miapp.JsonReader();
+	//ApiWeather miapp = new ApiWeather();
+	//miapp.JsonReader();
+	FileWeather miapp2 = new FileWeather();
+	miapp2.JsonWriter();
 	
 	
 	

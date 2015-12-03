@@ -43,7 +43,7 @@ public class FileWeather {
 			JSONParser jsonParser = new JSONParser();
 			JSONObject jsonObject = (JSONObject) jsonParser.parse(responsedata);
 
-			FileWriter file = new FileWriter("\test.json");
+			FileWriter file = new FileWriter("./test");
 			file.write(jsonObject.toJSONString());
 			file.flush();
 			file.close();

@@ -24,7 +24,7 @@ public class ApiWeather {
 	}
 	
 	public ArrayList<Weather> getWeatherWeek(String city){
-		ArrayList<Weather> lWeather = new ArrayList<>
+		ArrayList<Weather> lWeather = new ArrayList<Weather>();
 		
 		return lWeather;
 	}

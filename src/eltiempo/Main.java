@@ -1,19 +1,35 @@
 package eltiempo;
 
-import com.google.gson.Gson;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.json.JsonHierarchicalStreamDriver;
+
+
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		
-	String json = "{\"longitud\":\"1\",\"latitud\":2}";
-
-	Gson gson = new Gson();
-
-	Weather weather = (Weather) gson.fromJson(json, Weather.class);
+	ApiWeather miapp = new ApiWeather();
+	miapp.JsonReader();
+		
+	//String json = "{\"longitud\":\"1\",\"latitud\":2}";
+	//Gson gson = new Gson();
+	//Weather weather = (Weather) gson.fromJson(miapp.JsonReader(), Weather.class);
+	//System.out.println(weather.getCity());
+	//System.out.println(weather.getCoord());
+	//System.out.println(weather.getDescription());
+	//System.out.println(weather.getName());
+	//System.out.println(weather.getMain());
 	
-	System.out.println(weather.getLongitud());
-	System.out.println(weather.getLatitud());
+//	XStream xstream = new XStream(new JsonHierarchicalStreamDriver());        
+//    xstream.alias("eltiempo", Weather.class);
+//    System.out.println(xstream.toXML(miapp));	
+	
+	//FileReader reader = new FileReader();
 	
 
 }

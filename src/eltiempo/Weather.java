@@ -5,47 +5,60 @@ import java.util.ArrayList;
 
 public class Weather implements Serializable {
 
-	    private float longitud;
-	    private float latitud;
-	    private float tempMax;
+	    private double lon;
+	    private double lat;
+	    private double temp_max;
+	    private String name;
 	    private String city;
-	    private String weather;
+	    private String coord;
 		
-	    public Weather(float longitud, float latitud, float tempMax, String city, String weather) {
-			super();
-			this.longitud = longitud;
-			this.latitud = latitud;
-			this.tempMax = tempMax;
-			this.city = city;
-			this.weather = weather;
-		}
-
+	    
 		public Weather() {
-
+			super();
 		}
 
-		public float getLongitud() {
-			return longitud;
+		public Weather(double lon, double lat, double temp_max, String name, String city, String coord) {
+			super();
+			this.lon = lon;
+			this.lat = lat;
+			this.temp_max = temp_max;
+			this.name = name;
+			this.city = city;
+			this.coord= coord;
 		}
 
-		public void setLongitud(float longitud) {
-			this.longitud = longitud;
+		
+
+	    public double getLon() {
+			return lon;
 		}
 
-		public float getLatitud() {
-			return latitud;
+		public void setLon(double lon) {
+			this.lon = lon;
 		}
 
-		public void setLatitud(float latitud) {
-			this.latitud = latitud;
+		public double getLat() {
+			return lat;
 		}
 
-		public float getTempMax() {
-			return tempMax;
+		public void setLat(double lat) {
+			this.lat = lat;
 		}
 
-		public void setTempMax(float tempMax) {
-			this.tempMax = tempMax;
+		public double getTemp_max() {
+			return temp_max;
+		}
+
+		public void setTemp_max(double temp_max) {
+			this.temp_max = temp_max;
+		}
+
+		public String getName() {
+			return name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getCity() {
@@ -56,15 +69,19 @@ public class Weather implements Serializable {
 			this.city = city;
 		}
 
-		public String getWeather() {
-			return weather;
+		public String getCoord() {
+			return coord;
 		}
 
-		public void setWeather(String weather) {
-			this.weather = weather;
+		public void setCoord(String coord) {
+			this.coord = coord;
 		}
-	    
-	    
+
+		public String toString(){
+			 
+	    	return null;
+	    	
+	    }
 		
 	}
 

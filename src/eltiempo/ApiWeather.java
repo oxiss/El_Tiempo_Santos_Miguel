@@ -15,13 +15,13 @@ import org.json.simple.parser.ParseException;
 
 public class ApiWeather {
 
-	public String JsonReader() {
+	public String JsonReader(String ciudad) {
 
 		String responsedata = null;
 
 		URL url;
 		try {
-			url = new URL("http://api.openweathermap.org/data/2.5/weather?q=" + "Madrid,es"
+			url = new URL("http://api.openweathermap.org/data/2.5/weather?q=" + ciudad
 					+ "&appid=2de143494c0b295cca9337e1e96b00e0");
 
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -43,22 +43,22 @@ public class ApiWeather {
 				Weather weather = new Weather();
 				// Ejemplo de carlos JSON Parse Text
 				JSONObject coord = (JSONObject) jsonObject.get("coord");
-				JSONObject tempmax = (JSONObject) jsonObject.get("main");
+				JSONObject mainn = (JSONObject) jsonObject.get("main");
+				
 				
 				weather.setLon((Double)coord.get("lon"));
 				weather.setLat((Double)coord.get("lat"));
-				weather.setTemp_max((Double)tempmax.get("temp_max"));
+				weather.setTemp_max((Double)mainn.get("temp_max"));
+				weather.setPress((long) mainn.get("pressure"));
+				weather.setHum((long)mainn.get("humidity"));
 				
-				System.out.println(weather.getLat());
-				System.out.println(weather.getTemp_max());
+				System.out.println("******* INFORME COMPLETO DE LA CIUDAD DE "+ciudad +" *******");
 				
-
-				/*for (int i = 0; i < root.size(); i++) {
-					JSONObject jsonPost = (JSONObject) root.get(i);
-					JSONObject title = (JSONObject) jsonPost.get("title");
-					System.out.println(title.get("$t"));
-				}*/
-
+				System.out.println("La ciudad se encuentra localizada en: " + weather.getLat()+" Latitud" + " y "+ weather.getLon() + " longitud" );
+				System.out.println("Su temperatura máxima hoy será de "+weather.getTemp_max() +" grados Farenheit");
+				System.out.println("Su humedad relativa será de: "+ weather.getHum()+ "hr, y su presion: "+weather.getPress()+ " bares");
+				
+				System.out.println("******* INFORME FINALIZADO *******");
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -71,26 +71,26 @@ public class ApiWeather {
 
 	}
 
-	public String getJSON(String city, String metric) {
+//	public String getJSON(String city, String metric) {
+//
+//		return null;
+//	}
+//
+//	public String getJSON(String city) {
+//
+//		return null;
+//	}
+//
+//	public Weather getWeather(String city) {
+//		Weather weather = new Weather();
+//
+//		return weather;
+//	}
 
-		return null;
-	}
-
-	public String getJSON(String city) {
-
-		return null;
-	}
-
-	public Weather getWeather(String city) {
-		Weather weather = new Weather();
-
-		return weather;
-	}
-
-	public ArrayList <Weather> getWeatherWeek(String city) {
-		ArrayList<Weather> lWeather = new ArrayList<Weather>();
-
-		return lWeather;
-	}
+//	public ArrayList <Weather> getWeatherWeek(String city) {
+//		ArrayList<Weather> lWeather = new ArrayList<Weather>();
+//		
+//		return lWeather;
+//	}
 
 }

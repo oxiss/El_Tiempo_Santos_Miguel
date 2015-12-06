@@ -1,44 +1,37 @@
 package eltiempo;
 
-
 import java.io.FileNotFoundException;
-import java.io.FileReader;
-
-import com.thoughtworks.xstream.XStream;
-import com.thoughtworks.xstream.io.json.JsonHierarchicalStreamDriver;
-
-
 
 public class Main {
 
 	public static void main(String[] args) throws FileNotFoundException {
+		FileWeather objetoprincipal = new FileWeather();
+		// ELEGIMOS CIUDAD Y PAIS CON FORMATO Madrid,ES
+		String ciudaDeseada = "Sevilla,ES";
+
+		// ***********************************************
+		// Para leer y escribir a un fichero "WeatherComplexCiudadES" todo el json de una ciudad dada
+		objetoprincipal.JsonWriterComplex(objetoprincipal.connection(ciudaDeseada), ciudaDeseada);
+		// ***********************************************
+
+		// ***********************************************
+		// Para escribir un archivo "WeatherCiudadES" la ciudad con su
+		// tempertaura actual
+		objetoprincipal.connection(ciudaDeseada);
+		objetoprincipal.JSONWriterSimple(ciudaDeseada);
+		// ***********************************************
+
+		// ***********************************************
+		//Para leer por consola el informe completo de una ciudad en json
+		ApiWeather Objetosecundario = new ApiWeather();
+		Objetosecundario.JsonReader(ciudaDeseada);
+		// ***********************************************
 		
-	//ApiWeather miapp = new ApiWeather();
-	//miapp.JsonReader();
-	FileWeather miapp2 = new FileWeather();
-	miapp2.JsonWriter();
-	
-	
-	
 		
-	//String json = "{\"longitud\":\"1\",\"latitud\":2}";
-	//Gson gson = new Gson();
-	//Weather weather = (Weather) gson.fromJson(miapp.JsonReader(), Weather.class);
-	//System.out.println(weather.getCity());
-	//System.out.println(weather.getCoord());
-	//System.out.println(weather.getDescription());
-	//System.out.println(weather.getName());
-	//System.out.println(weather.getMain());
-	
-//	XStream xstream = new XStream(new JsonHierarchicalStreamDriver());        
-//    xstream.alias("eltiempo", Weather.class);
-//    System.out.println(xstream.toXML(miapp));	
-	
-	//FileReader reader = new FileReader();
-	
+		objetoprincipal.XMLWriter(ciudaDeseada, objetoprincipal.connection(ciudaDeseada));
+
+	}
 
 }
 
-}
-
-//http://api.openweathermap.org/data/2.5/weather?q=Madrid,es&appid=2de143494c0b295cca9337e1e96b00e0
+// http://api.openweathermap.org/data/2.5/weather?q=Madrid,es&appid=2de143494c0b295cca9337e1e96b00e0

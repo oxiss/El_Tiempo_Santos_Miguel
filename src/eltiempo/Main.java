@@ -5,30 +5,30 @@ import java.io.FileNotFoundException;
 public class Main {
 
 	public static void main(String[] args) throws FileNotFoundException {
-		FileWeather objetoprincipal = new FileWeather();
+		FileWeather ppalobject = new FileWeather();
 		// ELEGIMOS CIUDAD Y PAIS CON FORMATO Madrid,ES
-		String ciudaDeseada = "Sevilla,ES";
+		String selectedcity = "Sevilla,ES";
 
 		// ***********************************************
 		// Para leer y escribir a un fichero "WeatherComplexCiudadES" todo el json de una ciudad dada
-		objetoprincipal.JsonWriterComplex(objetoprincipal.connection(ciudaDeseada), ciudaDeseada);
+		ppalobject.JsonWriterComplex(ppalobject.connection(selectedcity), selectedcity);
 		// ***********************************************
 
 		// ***********************************************
 		// Para escribir un archivo "WeatherCiudadES" la ciudad con su
 		// tempertaura actual
-		objetoprincipal.connection(ciudaDeseada);
-		objetoprincipal.JSONWriterSimple(ciudaDeseada);
+		ppalobject.connection(selectedcity);
+		ppalobject.JSONWriterSimple(selectedcity);
 		// ***********************************************
 
 		// ***********************************************
 		//Para leer por consola el informe completo de una ciudad en json
 		ApiWeather Objetosecundario = new ApiWeather();
-		Objetosecundario.JsonReader(ciudaDeseada);
+		Objetosecundario.JsonReader(selectedcity);
 		// ***********************************************
 		
 		
-		objetoprincipal.XMLWriter(ciudaDeseada, objetoprincipal.connection(ciudaDeseada));
+		ppalobject.XMLWriter(selectedcity, ppalobject.connection(selectedcity));
 
 	}
 

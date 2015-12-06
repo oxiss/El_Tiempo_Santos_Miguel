@@ -25,16 +25,16 @@ public class FileWeather {
 
 	/**
 	 * 
-	 * @param ciudad la ciudad que queramos buscar en la conexion
-	 * @return string con el fichero json para procesarlo
+	 * @param city city want in connection
+	 * @return string with JSON for process
 	 */
-	public String connection(String ciudad) {
+	public String connection(String city) {
 		String responsedata = null;
 
 		URL url;
 
 		try {
-			url = new URL("http://api.openweathermap.org/data/2.5/weather?q=" + ciudad
+			url = new URL("http://api.openweathermap.org/data/2.5/weather?q=" + city
 					+ "&appid=2de143494c0b295cca9337e1e96b00e0");
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 			connection.connect();
@@ -63,25 +63,24 @@ public class FileWeather {
 
 	/**
 	 * 
-	 * @param mistr
-	 *            JSON parseado a String
-	 * @param ciudaDeseada
+	 * @param mistr JSON parsed to String
+	 *            
+	 * @param choosencity
 	 * 
-	 * @method Metodo que escribe en un fichero de nombre "WeatherComplex" el
-	 *         JSON completo
+	 * @method Write in "WeatherComplex" the root JSON 
 	 */
-	public void JsonWriterComplex(String mistr, String ciudaDeseada) {
+	public void JsonWriterComplex(String mistr, String choosencity) {
 
 		JSONParser jsonParser = new JSONParser();
 		JSONObject jsonObject;
 
 		try {
 			jsonObject = (JSONObject) jsonParser.parse(mistr);
-			FileWriter file = new FileWriter("./WeatherComplex" + ciudaDeseada);
+			FileWriter file = new FileWriter("./WeatherComplex" + choosencity);
 			file.write(jsonObject.toJSONString());
 			file.flush();
 			file.close();
-			System.out.print("Se ha creado el fichero WeatherComplex" + ciudaDeseada + " de forma correcta \n");
+			System.out.print("You have successfully created the file WeatherComplex" + choosencity + "\n");
 		} catch (ParseException e) {
 			System.err.println("Error al parsear");
 			e.printStackTrace();
@@ -92,29 +91,29 @@ public class FileWeather {
 
 	/**
 	 * 
-	 * @method Este método escribe en un archivo "Actual" (ej. WeatherMadriES)
+	 * @param Este método escribe en un archivo "Actual" (ej. WeatherMadriES)
 	 *         el tiempo resumido de una ciudad dada
 	 */
-	public void JSONWriterSimple(String ciudad) {
+	public void JSONWriterSimple(String city) {
 
 		try {
 			JSONParser jsonParser = new JSONParser();
 			JSONObject jsonObject;
-			FileReader filereader = new FileReader("./WeatherComplex" + ciudad);
+			FileReader filereader = new FileReader("./WeatherComplex" + city);
 			jsonObject = (JSONObject) jsonParser.parse(filereader);
-			String city = (String) jsonObject.get("name");
+			String citie = (String) jsonObject.get("name");
 			JSONObject name = (JSONObject) jsonObject.get("main");
 			Double temp = (Double) name.get("temp");
 
-			FileWriter file = new FileWriter("./Weather" + ciudad);
-			file.write("En la ciudad de " + city + " hace una temperatura de " + temp + " Fº");
+			FileWriter file = new FileWriter("./Weather" + citie);
+			file.write("The city of " + citie + " has a temperature of " + temp + " Fº");
 			file.flush();
 			file.close();
 
-			System.out.println("Se ha creado correctamente el fichero Weather" + ciudad + "\n");
+			System.out.println("You have successfully created the file Weather" + citie + "\n");
 
 		} catch (IOException e) {
-			System.out.println("error al crear archivo");
+			System.out.println("Error creating file");
 			e.printStackTrace();
 		} catch (ParseException e) {
 			e.printStackTrace();
@@ -122,29 +121,24 @@ public class FileWeather {
 
 	}
 	/**
-	 * @method Metodo no funcional por ahora
-	 * @param ciudad la ciudad que deseamos mostrar en xml
-	 * @param jsonstr el JSON en String
+	 * @param method does not work
+	 * @param city the city that we want to show in xml
+	 * @param jsonstr JSON in String
 	 */
-	public void XMLWriter(String ciudad, String jsonstr) {
+	public void XMLWriter(String city, String jsonstr) {
 
-		JSONParser jsonParser = new JSONParser();
-		JSONObject jsonObject;
-		FileReader filereader;
 		try {
-			filereader = new FileReader("WeatherComplex" + ciudad);
-			jsonObject = (JSONObject) jsonParser.parse(filereader);
 
 			XStream xstream = new XStream(new JsonHierarchicalStreamDriver());
 			xstream.alias("Weather", Weather.class);
 			String misstr = xstream.toXML(jsonstr);
 			System.out.println(misstr);
 
-			BufferedWriter bw = new BufferedWriter(new FileWriter("./xml" + ciudad + ".html"));
+			BufferedWriter bw = new BufferedWriter(new FileWriter("./xml" + city + ".html"));
 			bw.write(misstr);
 			bw.close();
 
-		} catch (IOException | ParseException e) {
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

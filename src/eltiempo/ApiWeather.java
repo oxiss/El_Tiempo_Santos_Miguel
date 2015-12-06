@@ -15,13 +15,16 @@ import org.json.simple.parser.ParseException;
 
 public class ApiWeather {
 
-	public String JsonReader(String ciudad) {
+	/**
+	 * @param city the city we want to show in the report
+	 */
+	public void JsonReader(String city) {
 
 		String responsedata = null;
 
 		URL url;
 		try {
-			url = new URL("http://api.openweathermap.org/data/2.5/weather?q=" + ciudad
+			url = new URL("http://api.openweathermap.org/data/2.5/weather?q=" + city
 					+ "&appid=2de143494c0b295cca9337e1e96b00e0");
 
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -52,13 +55,13 @@ public class ApiWeather {
 				weather.setPress((long) mainn.get("pressure"));
 				weather.setHum((long)mainn.get("humidity"));
 				
-				System.out.println("******* INFORME COMPLETO DE LA CIUDAD DE "+ciudad +" *******");
+				System.out.println("******* COMPLETE REPORT FOR "+city +" *******");
 				
-				System.out.println("La ciudad se encuentra localizada en: " + weather.getLat()+" Latitud" + " y "+ weather.getLon() + " longitud" );
-				System.out.println("Su temperatura máxima hoy será de "+weather.getTemp_max() +" grados Farenheit");
-				System.out.println("Su humedad relativa será de: "+ weather.getHum()+ "hr, y su presion: "+weather.getPress()+ " bares");
+				System.out.println("The city is located in: " + weather.getLat()+" Latitude" + " y "+ weather.getLon() + " Longitude" );
+				System.out.println("Today the maximum temperature will be "+weather.getTemp_max() +" Farenheit");
+				System.out.println("Relative humidity should be: "+ weather.getHum()+ "hr, y the pression: "+weather.getPress()+ " bars");
 				
-				System.out.println("******* INFORME FINALIZADO *******");
+				System.out.println("******* REPORT ENDED *******");
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -67,7 +70,7 @@ public class ApiWeather {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return responsedata;
+	
 
 	}
 

@@ -27,6 +27,7 @@ public class FileWeather {
 	 * 
 	 * @param city city want in connection
 	 * @return string with JSON for process
+	 * @author Miguel
 	 */
 	public String connection(String city) {
 		String responsedata = null;
@@ -64,9 +65,8 @@ public class FileWeather {
 	/**
 	 * 
 	 * @param mistr JSON parsed to String
-	 *            
+	 * @author Santos G      
 	 * @param choosencity
-	 * 
 	 * @method Write in "WeatherComplex" the root JSON 
 	 */
 	public void JsonWriterComplex(String mistr, String choosencity) {
@@ -93,6 +93,7 @@ public class FileWeather {
 	 * 
 	 * @param Este método escribe en un archivo "Actual" (ej. WeatherMadriES)
 	 *         el tiempo resumido de una ciudad dada
+	 *         @author Santos
 	 */
 	public void JSONWriterSimple(String city) {
 

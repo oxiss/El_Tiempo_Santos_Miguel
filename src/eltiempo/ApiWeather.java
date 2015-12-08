@@ -17,6 +17,7 @@ public class ApiWeather {
 
 	/**
 	 * @param city the city we want to show in the report
+	 * @author Santos y Miguel
 	 */
 	public void JsonReader(String city) {
 

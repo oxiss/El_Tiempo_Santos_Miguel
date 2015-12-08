@@ -7,7 +7,7 @@ public class Main {
 	public static void main(String[] args) throws FileNotFoundException {
 		FileWeather ppalobject = new FileWeather();
 		// ELEGIMOS CIUDAD Y PAIS CON FORMATO Madrid,ES
-		String selectedcity = "Sevilla,ES";
+		String selectedcity = "Madrid,ES";
 
 		// ***********************************************
 		// Para leer y escribir a un fichero "WeatherComplexCiudadES" todo el json de una ciudad dada

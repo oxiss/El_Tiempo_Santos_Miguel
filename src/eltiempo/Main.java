@@ -1,7 +1,11 @@
 package eltiempo;
 
 import java.io.FileNotFoundException;
-
+/**
+ * 
+ * @author Santos Garcia y Miguel A. Nuñez
+ *
+ */
 public class Main {
 
 	public static void main(String[] args) throws FileNotFoundException {

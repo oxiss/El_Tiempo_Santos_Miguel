@@ -17,7 +17,11 @@ import org.json.simple.parser.ParseException;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.json.JsonHierarchicalStreamDriver;
 
-
+/**
+ * 
+ * @author Santos Garcia y Miguel A. Nuñez
+ *
+ */
 public class FileWeather {
 
 	// http://www.mkyong.com/java/json-simple-example-read-and-write-json/

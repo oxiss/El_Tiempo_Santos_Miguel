@@ -1,8 +1,11 @@
 package eltiempo;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-
+/**
+ * 
+ * @author Santos Garcia y Miguel A. Nuñez
+ *
+ */
 
 public class Weather implements Serializable {
 

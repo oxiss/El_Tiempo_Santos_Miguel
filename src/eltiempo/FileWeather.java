@@ -19,7 +19,7 @@ import com.thoughtworks.xstream.io.json.JsonHierarchicalStreamDriver;
 
 /**
  * 
- * @author Santos Garcia y Miguel A. Nuñez
+ * @author Santos Garcia & Miguel A. Nuñez
  *
  */
 public class FileWeather {

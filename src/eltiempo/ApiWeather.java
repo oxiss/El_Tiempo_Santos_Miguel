@@ -13,7 +13,7 @@ import org.json.simple.parser.ParseException;
 
 /**
  * 
- * @author Santos Garcia y Miguel A. Nuñez
+ * @author Santos Garcia & Miguel A. Nuñez
  *
  */
 

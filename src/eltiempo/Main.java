@@ -3,7 +3,7 @@ package eltiempo;
 import java.io.FileNotFoundException;
 /**
  * 
- * @author Santos Garcia y Miguel A. Nuñez
+ * @author Santos Garcia & Miguel A. Nuñez
  *
  */
 public class Main {

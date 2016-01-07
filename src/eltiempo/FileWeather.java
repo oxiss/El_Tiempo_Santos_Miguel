@@ -17,10 +17,8 @@ import org.json.simple.parser.ParseException;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.json.JsonHierarchicalStreamDriver;
 
-
 public class FileWeather {
 
-	// http://www.mkyong.com/java/json-simple-example-read-and-write-json/
 	Weather time;
 
 	/**
@@ -82,7 +80,7 @@ public class FileWeather {
 			file.close();
 			System.out.print("You have successfully created the file WeatherComplex" + choosencity + "\n");
 		} catch (ParseException e) {
-			System.err.println("Error al parsear");
+			System.err.println("Error parsing");
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();

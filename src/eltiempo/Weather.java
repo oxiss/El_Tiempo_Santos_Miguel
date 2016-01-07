@@ -14,6 +14,8 @@ public class Weather implements Serializable {
 	private String name;
 	private String city;
 	private String coord;
+	private int num;
+	private String Cnum;
 
 	public Weather() {
 		super();
@@ -36,7 +38,7 @@ public class Weather implements Serializable {
 	}
 
 	public Weather(double lon, double lat, double temp_max, long hum, long press, String name, String city,
-			String coord) {
+			String coord, int num, String Cnum) {
 		super();
 		this.lon = lon;
 		this.lat = lat;
@@ -97,5 +99,21 @@ public class Weather implements Serializable {
 	public void setCoord(String coord) {
 		this.coord = coord;
 	}
+
+	public void setNum(int num) {
+		this.num=num;
+		
+	}
+
+	public void setCnum(String Cnum) {
+		this.Cnum=Cnum;
+		
+	}
+
+	public String toString() {
+		return "Weather [lon=" + lon + ", lat=" + lat + ", temp_max=" + temp_max + ", hum=" + hum + ", press=" + press
+				+ ", name=" + name + ", city=" + city + ", coord=" + coord + ", num=" + num + ", Cnum=" + Cnum + "]";
+	}
+	
 
 }

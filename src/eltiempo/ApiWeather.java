@@ -45,7 +45,7 @@ public class ApiWeather {
 				JSONObject jsonObject = (JSONObject) jsonParser.parse(responsedata);
 
 				Weather weather = new Weather();
-				// Ejemplo de carlos JSON Parse Text
+				
 				JSONObject coord = (JSONObject) jsonObject.get("coord");
 				JSONObject mainn = (JSONObject) jsonObject.get("main");
 				

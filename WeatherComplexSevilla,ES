@@ -1,1 +1,1 @@
-{"dt":1449685800,"coord":{"lon":-5.98,"lat":37.38},"weather":[{"icon":"01n","description":"Sky is Clear","main":"Clear","id":800}],"name":"Sevilla","cod":200,"main":{"temp":291.95,"temp_min":290.15,"humidity":55,"pressure":1030,"temp_max":294.15},"clouds":{"all":0},"id":2510911,"sys":{"country":"ES","sunrise":1449646007,"sunset":1449680763,"id":5511,"type":1,"message":0.0089},"base":"cmc stations","wind":{"deg":90,"speed":4.6}}
+

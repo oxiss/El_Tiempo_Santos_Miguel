@@ -18,7 +18,7 @@ import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.json.JsonHierarchicalStreamDriver;
 
 /**
- * 
+ *
  * @author Santos Garcia & Miguel A. Nuñez
  *
  */
@@ -28,7 +28,7 @@ public class FileWeather {
 	Weather time;
 
 	/**
-	 * 
+	 *
 	 * @param city city want in connection
 	 * @return string with JSON for process
 	 */
@@ -39,7 +39,7 @@ public class FileWeather {
 
 		try {
 			url = new URL("http://api.openweathermap.org/data/2.5/weather?q=" + city
-					+ "&appid=2de143494c0b295cca9337e1e96b00e0");
+					+ "&appid=2de143494c0b295cca9337e1e96b00e0&units=metric");
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 			connection.connect();
 			InputStream stream = connection.getInputStream();
@@ -66,12 +66,12 @@ public class FileWeather {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param mistr JSON parsed to String
-	 *            
+	 *
 	 * @param choosencity
-	 * 
-	 * @method Write in "WeatherComplex" the root JSON 
+	 *
+	 * @method Write in "WeatherComplex" the root JSON
 	 */
 	public void JsonWriterComplex(String mistr, String choosencity) {
 
@@ -94,7 +94,7 @@ public class FileWeather {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param Este método escribe en un archivo "Actual" (ej. WeatherMadriES)
 	 *         el tiempo resumido de una ciudad dada
 	 */

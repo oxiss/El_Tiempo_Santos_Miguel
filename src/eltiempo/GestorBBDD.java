@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class GestorBBDD extends Conexion{
+public class GestorBBDD extends Conexion {
 
 	
 	private final static String DRIVER ="org.sqlite.JDBC";
@@ -29,9 +29,8 @@ public class GestorBBDD extends Conexion{
     public void insertCiudad(Weather wea){
     	try {
 			PreparedStatement sentencia = getConexion().prepareStatement(INSERT_CIUDAD);
-		    sentencia.setString(1, wea.getCity());
-		    sentencia.setString(2, wea.getCoord());
-		    sentencia.setLong(3, (long) wea.getLat());
+		    sentencia.setLong(1, wea.getHum());
+		    sentencia.setString(2, wea.getCity());
 			sentencia.executeUpdate();
 		} catch (SQLException e) {
 			System.err.println("error al insertar la ciudad "+wea.getCity());
@@ -65,6 +64,7 @@ public class GestorBBDD extends Conexion{
 		} catch (SQLException e) {
 			System.err.println(TablaTiempo.CREATE_TABLE);
 			System.err.println(e.getMessage());
+			
 			
 		}
 	}

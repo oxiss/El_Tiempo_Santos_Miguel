@@ -10,8 +10,8 @@ public class Conexion {
 	
 	Conexion(String driver,String URL){
 		try {
-			Class.forName(driver);
-			conexion = DriverManager.getConnection("jdbc:sqlite:C:Users/Santos/git/El_Tiempo_Santos_Miguel/mibbddtiempo.db");		
+			Class.forName("org.sqlite.JDBC");
+			conexion = DriverManager.getConnection("jdbc:sqlite:ejemplito.db");	
 		} catch (ClassNotFoundException e) {
 			System.err.println("driver no encontrado");
 		} catch (SQLException e) {

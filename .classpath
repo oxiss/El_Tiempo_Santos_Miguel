@@ -6,7 +6,6 @@
 	<classpathentry kind="lib" path="lib/xstream-1.4.8.jar"/>
 	<classpathentry kind="lib" path="lib/json-simple-1.1.1.jar"/>
 	<classpathentry kind="lib" path="lib/org.json-20120521.jar"/>
-	<classpathentry kind="lib" path="lib/sqlite-jdbc-3.5.7.jar.zip"/>
-	<classpathentry kind="lib" path="lib/sqlite-jdbc-3.5.7.jar"/>
+	<classpathentry kind="lib" path="lib/sqlite-jdbc-3.8.11.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

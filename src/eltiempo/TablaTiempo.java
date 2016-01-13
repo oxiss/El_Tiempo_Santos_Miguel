@@ -7,6 +7,6 @@ public abstract class TablaTiempo {
 	public static final String COLUMN_TEMP_MAX = "temp_max";
 
 	public static final String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + " ( " + COLUMN_CITY_NO
-			+ "INTEGER PRIMARY KEY," + COLUMN_TEMP_MAX + " TEXT NOT NULL," + ");";
+			+ " INTEGER PRIMARY KEY," + COLUMN_TEMP_MAX + "TEXT NOT NULL" + ")";
 
 }
